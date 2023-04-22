@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppFirebase.UserDetailPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry x:Name="PDescripcion" Text="{Binding Descripcion}" Margin="15,0,15,5"/>
+            <Entry x:Name="PId" Text="{Binding id}" Keyboard="Telephone" Margin="15,0,15,5" />
+            <DatePicker x:Name="PFecha" Date="{Binding Fecha}" Margin="15,0,15,5" />
+            <Image x:Name="PPhoto" Source="{Binding Photo}" HeightRequest="200" Margin="15,0,15,5" >
+
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer
+                Tapped="TapGestureRecognizer_Tapped"
+                NumberOfTapsRequired="1" />
+                </Image.GestureRecognizers>
+
+            </Image>
+            <Button Text="Update" Clicked="Button_OnClicked" Margin="15,0,15,5"/>
+            <Button Text="Delete" Clicked="Button_Clicked" Margin="15,0,15,5"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
